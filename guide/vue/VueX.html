@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>一、Vuex是做什么的？ | 丢丢的学习笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/lulu.jpg">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.7b36eabc.css" as="style"><link rel="preload" href="/assets/js/app.04f5dcca.js" as="script"><link rel="preload" href="/assets/js/2.261d2b8b.js" as="script"><link rel="preload" href="/assets/js/9.3fc0bfc4.js" as="script"><link rel="prefetch" href="/assets/js/10.e5b22aac.js"><link rel="prefetch" href="/assets/js/11.ed5352da.js"><link rel="prefetch" href="/assets/js/12.b60285fa.js"><link rel="prefetch" href="/assets/js/13.904f8e88.js"><link rel="prefetch" href="/assets/js/14.4f4acc61.js"><link rel="prefetch" href="/assets/js/15.527d41e9.js"><link rel="prefetch" href="/assets/js/16.7ef297e7.js"><link rel="prefetch" href="/assets/js/17.992a3eb0.js"><link rel="prefetch" href="/assets/js/18.afb31395.js"><link rel="prefetch" href="/assets/js/19.55404cef.js"><link rel="prefetch" href="/assets/js/20.2c6a737a.js"><link rel="prefetch" href="/assets/js/21.b05d0398.js"><link rel="prefetch" href="/assets/js/22.a89f6d70.js"><link rel="prefetch" href="/assets/js/3.af035f22.js"><link rel="prefetch" href="/assets/js/4.cb38a641.js"><link rel="prefetch" href="/assets/js/5.fc5ebe8e.js"><link rel="prefetch" href="/assets/js/6.31de2029.js"><link rel="prefetch" href="/assets/js/7.f5561329.js"><link rel="prefetch" href="/assets/js/8.628d0d40.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7b36eabc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/lulu.jpg" alt="丢丢的学习笔记" class="logo"> <span class="site-name can-hide">丢丢的学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/vue/" class="nav-link router-link-active">
+  vue
+</a></div><div class="nav-item"><a href="/guide/weixin/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/guide/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/guide/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/guide/webpack/" class="nav-link">
+  webpack
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/vue/" class="nav-link router-link-active">
+  vue
+</a></div><div class="nav-item"><a href="/guide/weixin/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/guide/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/guide/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/guide/webpack/" class="nav-link">
+  webpack
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue.js</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/vue/Vue.html" class="sidebar-link">Vue</a></li><li><a href="/guide/vue/VueX.html" aria-current="page" class="active sidebar-link">VueX</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/vue/VueX.html#一、vuex是做什么的" class="sidebar-link">一、Vuex是做什么的？</a></li><li class="sidebar-sub-header"><a href="/guide/vue/VueX.html#二、界面的状态管理" class="sidebar-link">二、界面的状态管理</a></li><li class="sidebar-sub-header"><a href="/guide/vue/VueX.html#三、vuex核心概念" class="sidebar-link">三、vuex核心概念</a></li><li class="sidebar-sub-header"><a href="/guide/vue/VueX.html#四、项目结构" class="sidebar-link">四、项目结构</a></li></ul></li><li><a href="/guide/vue/Vue-Cli.html" class="sidebar-link">Vue-Cli</a></li><li><a href="/guide/vue/Vue-Router.html" class="sidebar-link">Vue-Router</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="一、vuex是做什么的"><a href="#一、vuex是做什么的" class="header-anchor">#</a> 一、Vuex是做什么的？</h2> <ul><li><p>Vuex 是一个专为vue.js应用程序开发的<strong>状态管理模式</strong>。</p> <ul><li>它采用 <strong>集中式存储管理</strong> 应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</li> <li>Vuex也集成到Vue的官方调试工具 <strong>devtools extenstion</strong> ，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。</li></ul></li> <li><p>状态管理是什么</p> <ul><li>把需要多个组件共享的变量全部存储在一个对象里面</li> <li>然后将这个对象放在顶层的Vue中，让其他组件可以使用</li> <li>那么多个组件可以共享这个对象中的所有变量属性了</li> <li>而且是响应式的</li></ul></li></ul> <h3 id="我们一般管理什么状态呢"><a href="#我们一般管理什么状态呢" class="header-anchor">#</a> 我们一般管理什么状态呢</h3> <ul><li>用户的登录状态、用户名称、头像、地理信息等等</li> <li>商品的收藏等、购物车中的物品等</li></ul> <h2 id="二、界面的状态管理"><a href="#二、界面的状态管理" class="header-anchor">#</a> 二、界面的状态管理</h2> <h3 id="_1-1单界面状态管理"><a href="#_1-1单界面状态管理" class="header-anchor">#</a> 1.1单界面状态管理</h3> <p><img src="/assets/img/image-20210811222222854.537d1be5.png" alt="image"></p> <ul><li>状态state在界面view中显示，view的行为action又影响状态</li></ul> <h3 id="_1-2多界面状态管理"><a href="#_1-2多界面状态管理" class="header-anchor">#</a> 1.2多界面状态管理</h3> <ul><li>用vuex</li> <li>异步操作：action</li> <li>同步操作：通过mutation的方式改变数据</li></ul> <p><img src="/assets/img/image-20210811225046198.946d55ba.png" alt="image"></p> <ul><li>简单步骤
+<ol><li>提取出一个公共的store对象，用于保存多个组件中共享的状态</li> <li>将store对象放置在new Vue中</li> <li>在其他组件中使用store对象保存的状态：
+<ul><li>通过this.$store.state属性访问状态</li> <li>通过this.$store.commit('mutation中方法')来修改状态</li></ul></li></ol></li></ul> <h2 id="三、vuex核心概念"><a href="#三、vuex核心概念" class="header-anchor">#</a> 三、vuex核心概念</h2> <ul><li><p>state单一状态树</p> <ul><li>一个项目里我们只使用一个store</li></ul></li> <li><p><strong>getters</strong></p> <ul><li>类似于计算属性，对state的数据进行处理</li> <li>getters里的函数有两个参数state,getters</li> <li>getters默认不能传参数，如果要传参只能让getters本身返回另一个函数</li></ul></li></ul> <h3 id="mutation状态更新"><a href="#mutation状态更新" class="header-anchor">#</a> Mutation状态更新</h3> <ul><li><p>Vuex的store状态的更新唯一方式：<strong>提交Mutation</strong></p></li> <li><p>mutation的两部分</p> <ul><li>字符串的事件类型(type)</li> <li>一个回调函数(handler)，该回调函数的第一个参数就是state</li></ul></li> <li><p>mutation更新数据时可以传递参数(载荷payload)</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">&quot;addCount&quot;</span><span class="token punctuation">,</span>count<span class="token punctuation">)</span>
+</code></pre></div><p>参数可以是对象</p></li></ul> <h3 id="mutation提交风格"><a href="#mutation提交风格" class="header-anchor">#</a> Mutation提交风格</h3> <ul><li><p>用commit提交是一种风格</p></li> <li><p>第二种</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>    <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;incrementCount&quot;</span><span class="token punctuation">,</span>
+        count<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>mutation接受时的第二个参数是整个对象而不是传过来的参数了</p></li></ul> <h3 id="mutation的响应式规则"><a href="#mutation的响应式规则" class="header-anchor">#</a> Mutation的响应式规则</h3> <ul><li>Vuex的store的数据是响应式的，当state的数据发生改变时，Vue组件会自动更新</li> <li>这需要遵循一定的规则
+<ul><li>提前在store中定义好属性</li> <li>给state添加新属性时，两种方法
+<ul><li>一、使用Vue.set(obj,'newProp',132)</li> <li>二、用新对象给就对象重新赋值</li></ul></li> <li>删除state的属性时
+<ul><li>Vue.delete(obj,'Prop')</li></ul></li></ul></li></ul> <h3 id="mutation常量"><a href="#mutation常量" class="header-anchor">#</a> Mutation常量</h3> <ul><li>把mutation的函数名改用常量</li></ul> <h3 id="mutation同步函数"><a href="#mutation同步函数" class="header-anchor">#</a> Mutation同步函数</h3> <ul><li><p>Vuex要求mutation里的方法必须是同步方法</p> <ul><li>异步操作的话devtools不能跟踪到操作的完成</li></ul></li> <li><p>要是有异步操作，就要用我们的action啦</p></li></ul> <h3 id="action的基本定义"><a href="#action的基本定义" class="header-anchor">#</a> Action的基本定义</h3> <ul><li>action类似于mutation但是是用来代替mution进行异步操作的</li> <li>action可以返回promise,在dispatch可以使用promise</li></ul> <h3 id="modules的使用"><a href="#modules的使用" class="header-anchor">#</a> Modules的使用</h3> <ul><li>modules就是模块的意思</li> <li>Vuex允许我们将store分割成模块，每个模块拥有自己的state/mutations/actions/getters等</li></ul> <h2 id="四、项目结构"><a href="#四、项目结构" class="header-anchor">#</a> 四、项目结构</h2></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/vue/Vue.html" class="prev">
+        Vue
+      </a></span> <span class="next"><a href="/guide/vue/Vue-Cli.html">
+        Vue-Cli
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.04f5dcca.js" defer></script><script src="/assets/js/2.261d2b8b.js" defer></script><script src="/assets/js/9.3fc0bfc4.js" defer></script>
+  </body>
+</html>
